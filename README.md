@@ -9,7 +9,9 @@ This repo is a template for a pip installable package.
     - You'll probably want to initialize a new using the new package name.
 4. The `<package name>/src/pkg` directory needs to be renamed to the `<package name>/src/<package name>`.
 5. If you've initialized a new repo, modify `<package name>/.gitignore` by replacing the line `src/pkg.egg-info` with `src/<package name>.egg-info`.
-6. All of the package's code goes in the `<package name>/src/<package name>` directory.
-7. Add dependency packages in the `install_requires` directive of `<package name>/setup.cfg`.  Change info in the `metadata` directive too while you're here.
-8. Upgrade pip with `pip install -U pip` to ensure that you can install editable packages.
-9. Locally install the package with `pip install -e ./<package name>`.
+6. Modify `<package name>/setup.cfg` by replacing the line in the `metadata` section `name = pkg` with `name = <package name>`.
+    - You can update the remaining directives in this section while you're here.
+7. Add dependency packages in the `install_requires` directive of `<package name>/setup.cfg`.
+8. All of the package's code goes in the `<package name>/src/<package name>` directory.
+9. Upgrade pip with `pip install -U pip` to ensure that you can install editable packages.
+10. Locally install the package with `pip install -e ./<package name>`.
