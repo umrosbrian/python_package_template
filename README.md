@@ -6,7 +6,7 @@ This repo is a template for a pip installable package.
 2. Rename the `python_package_template` directory to the name of the package you'll be creating; we'll call this *package name*.
     - Python package names should be lowercase and need to be one word (no spaces).  Underscores won't break anything, but they aren't the standard.
 3. Remove the `<package name>/.git` directory.
-    - You'll probably want to initialize a new using the new package name.
+    - You'll probably want to initialize a new one using the new package name.
 4. The `<package name>/src/pkg` directory needs to be renamed to the `<package name>/src/<package name>`.
 5. If you've initialized a new repo, modify `<package name>/.gitignore` by replacing the line `src/pkg.egg-info` with `src/<package name>.egg-info`.
 6. Modify `<package name>/setup.cfg` by replacing the line in the `metadata` section `name = pkg` with `name = <package name>`.
