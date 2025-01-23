@@ -70,6 +70,10 @@ with open(gitignore_path, 'w') as f:
     f.write('\n'.join(line for line in new_gitignore_contents))
 print(f"updated '{gitignore_path}'")
 
+readme_path = os.path.join(new_package_name, 'README.md')
+os.remove(readme_path)
+print(f"removed '{readme_path}'")
+
 print(f"""
 Now you'll need to:
 
@@ -78,4 +82,4 @@ Now you'll need to:
 3. Add the package's code to the '{new_src_subdir_path}' directory.
 4. Upgrade pip with 'pip install -U pip' to ensure that you can install editable packages.
 5. Locally install the package with 'pip install -e ./{new_package_name}'.
-6. Optionally, initiate a new git repo with 'git init'.""")
+6. Optionally, initiate a new git repo.""")
