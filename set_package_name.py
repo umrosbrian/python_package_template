@@ -15,8 +15,8 @@ old_package_name = 'python_package_template'
 new_package_name = args['package_name']
 # new_package_name = 'sshauth'
 
-# all paths are relative to the parent dir of this script
-os.chdir(os.pardir)
+## all paths are relative to the parent dir of this script
+#os.chdir(os.pardir)
 
 # exit if the package name won't work
 for char in new_package_name:
