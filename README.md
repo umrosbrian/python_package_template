@@ -1,1 +1,3 @@
-This repo is a template for a pip installable package.  After cloning the repo, without changing directories, execute `python python_package_template/set_package_name.py -p <new package name>`.  Read the output of the script for further instructions.
+This repo is a template for a pip installable package.  Create and activate a virtual environment.  After cloning the repo, without changing directories, execute `python python_package_template/set_package_name.py -p <new package name>`.  Read the output of the script for further instructions.
+
+After following the steps output by the script, you have the option of configuring Sphinx.  If you don't want to do this, feel free to delete the `docs` directory.
