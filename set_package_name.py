@@ -11,7 +11,7 @@ required.add_argument('-p', '--package_name',
                       help="Name of package that is being create.  Python package names should be lowercase and need to be one word (no spaces).  Underscores won't break anything, but they aren't the standard.")
 args = vars(ap.parse_args())
 
-old_package_name = 'python_package_template'
+old_package_name = 'python_package_template'  # name of this repo as it currently stands
 new_package_name = args['package_name']
 # new_package_name = 'sshauth'
 
@@ -27,7 +27,7 @@ for char in new_package_name:
 shutil.move(old_package_name, new_package_name)
 print(f"renamed '{old_package_name}' to '{new_package_name}'")
 
-# remove .git dir
+# remove .git dir of the python_package_template repo
 git_dir_path = os.path.join(new_package_name, '.git')
 shutil.rmtree(git_dir_path)
 print(f"removed '{git_dir_path}'")
