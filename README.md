@@ -1,1 +1,1 @@
-This repo is a template for a pip installable package.  After cloning the repo, without changing directories, execute `python3 python_package_template/set_package_name.py -p <new package name>`.  Read the output of the script for further instructions.
+This repo is a template for a pip installable package.  After cloning the repo, without changing directories, execute `python python_package_template/set_package_name.py -p <new package name>`.  Read the output of the script for further instructions.
