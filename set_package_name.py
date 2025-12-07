@@ -2,7 +2,7 @@ import argparse
 import os
 import shutil
 import string
-
+from sitecustomize import new_prefix
 
 #ap = argparse.ArgumentParser()
 #required = ap.add_argument_group('required named arguments')
@@ -14,6 +14,22 @@ import string
 old_package_name = 'python_package_template'  # name of this repo as it currently stands
 # new_package_name = args['package_name']
 new_package_name = 'sshauth'
+
+def update_package_name(file_path):
+    """Change all occurrences of the current package name (python_package_template) in a file to the new package
+    name.
+    :param file_path: path to file needing the change"""
+    with open(file_path, 'r') as f:
+        old_contents = f.read().splitlines()
+    new_contents = []
+    for line in old_contents:
+        if old_package_name in line:
+            new_contents.append(line.replace(old_package_name, new_package_name))
+        else:
+            new_contents.append(line)
+    with open(file_path, 'w') as f:
+        f.write('\n'.join(line for line in new_contents))
+    print(f"updated package name in '{file_path}'")
 
 ## all paths are relative to the parent dir of this script
 #os.chdir(os.pardir)
@@ -72,6 +88,11 @@ for line in old_gitignore_contents:
 with open(gitignore_path, 'w') as f:
     f.write('\n'.join(line for line in new_gitignore_contents))
 print(f"updated '{gitignore_path}'")
+
+
+# change package name in sphinx config
+sphinx_config_path = os.path.join(new_package_name, 'docs', 'conf.py')
+update_package_name(sphinx_config_path)
 
 print(f"""
 Now you'll need to:
