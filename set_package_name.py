@@ -66,9 +66,13 @@ print(f"renamed '{old_src_subdir_path}' to '{new_src_subdir_path}'")
 gitignore_path = os.path.join(new_package_name, '.gitignore')
 update_package_name(gitignore_path)
 
-# change package name in sphinx config
+# change package name sphinx-related files
 sphinx_config_path = os.path.join(new_package_name, 'docs', 'conf.py')
 update_package_name(sphinx_config_path)
+sphinx_api_path = os.path.join(new_package_name, 'docs', 'api.rst')
+update_package_name(sphinx_api_path)
+sphinx_index_path = os.path.join(new_package_name, 'docs', 'index.rst')
+update_package_name(sphinx_index_path)
 
 print(f"""
 Now you'll need to:
