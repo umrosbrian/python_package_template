@@ -9,4 +9,4 @@
    :template: custom-module-template.rst
    :recursive:
 
-   mytoolbox
+   python_package_template

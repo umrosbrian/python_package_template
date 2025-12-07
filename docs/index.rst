@@ -4,8 +4,8 @@
 .. toctree::
    :hidden:
 
-   API reference <_autosummary/mytoolbox>
+   API reference <_autosummary/python_package_template>
 
-mytoolbox documentation
-=======================
+python_package_template documentation
+=====================================
 
