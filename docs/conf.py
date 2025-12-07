@@ -18,7 +18,7 @@ print(f"package_path: {package_path}")
 
 # -- Project information -----------------------------------------------------
 
-project = 'mytoolbox'
+project = 'python_package_template'
 author = ''
 
 # The full version, including alpha/beta/rc tags
