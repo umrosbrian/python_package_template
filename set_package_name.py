@@ -83,5 +83,4 @@ Now you'll need to:
 4. Upgrade pip with 'pip install -U pip' to ensure that you can install editable packages.
 5. Locally install the package with 'pip install -e ./{new_package_name}'.
 6. Optionally, delete this script with 'rm {new_package_name}/set_package_name.py'.
-7. Optionally, initiate a new git repo in the '{new_package_name}' directory.
-8. Optionally, assign an author in '{new_package_name}/docs/conf.py' if you plan on using sphinx.""")
+7. Optionally, initiate a new git repo in the '{new_package_name}' directory.""")
