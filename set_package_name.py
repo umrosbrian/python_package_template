@@ -4,16 +4,16 @@ import shutil
 import string
 
 
-ap = argparse.ArgumentParser()
-required = ap.add_argument_group('required named arguments')
-required.add_argument('-p', '--package_name',
-                      required=True,
-                      help="Name of package that is being create.  Python package names should be lowercase and need to be one word (no spaces).  Underscores won't break anything, but they aren't the standard.")
-args = vars(ap.parse_args())
+#ap = argparse.ArgumentParser()
+#required = ap.add_argument_group('required named arguments')
+#required.add_argument('-p', '--package_name',
+#                      required=True,
+#                      help="Name of package that is being create.  Python package names should be lowercase and need to be one word (no spaces).  Underscores won't break anything, but they aren't the standard.")
+#args = vars(ap.parse_args())
 
 old_package_name = 'python_package_template'  # name of this repo as it currently stands
-new_package_name = args['package_name']
-# new_package_name = 'sshauth'
+# new_package_name = args['package_name']
+new_package_name = 'sshauth'
 
 ## all paths are relative to the parent dir of this script
 #os.chdir(os.pardir)
@@ -39,8 +39,8 @@ with open(cfg_path, 'r') as f:
     old_cfg_contents = f.read().splitlines()
 new_cfg_contents = []
 for line in old_cfg_contents:
-    if line.endswith('pkg'):
-        new_line = line.replace('pkg', new_package_name)
+    if line.endswith(old_package_name):
+        new_line = line.replace(old_package_name, new_package_name)
         new_cfg_contents.append(new_line)
     else:
         new_cfg_contents.append(line)
@@ -49,7 +49,7 @@ with open(cfg_path, 'w') as f:
 print(f"updated '{cfg_path}'")
 
 # change package dir in src
-old_src_subdir_path = os.path.join(new_package_name, 'src', 'pkg')
+old_src_subdir_path = os.path.join(new_package_name, 'src', old_package_name)
 new_src_subdir_path = os.path.join(new_package_name, 'src', new_package_name)
 shutil.move(old_src_subdir_path, new_src_subdir_path)
 print(f"renamed '{old_src_subdir_path}' to '{new_src_subdir_path}'")
@@ -61,8 +61,8 @@ with open(gitignore_path, 'r') as f:
     old_gitignore_contents = f.read().splitlines()
 new_gitignore_contents = []
 for line in old_gitignore_contents:
-    if 'pkg' in line:
-        new_line = line.replace('pkg', new_package_name)
+    if old_package_name in line:
+        new_line = line.replace(old_package_name, new_package_name)
         new_gitignore_contents.append(new_line)
     else:
         new_gitignore_contents.append(line)
