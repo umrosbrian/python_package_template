@@ -1,0 +1,15 @@
+/* Styling for the :command: role */
+.command {
+    color: darkblue;
+    font-weight: bold;
+    /* background-color: #f0f8ff; /* A very light blue background to visually lift it */
+    /* padding: 2px 4px; /* Add a little padding so the background shows nicely */
+    /* border-radius: 3px */;
+}
+
+/* Styling for the :file: role */
+.file {
+    color: green !important; /* I couldn't override other selectors so used !important to force it */
+    /* font-style: italic */;
+    font-weight: normal;
+}
