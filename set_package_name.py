@@ -23,18 +23,21 @@ for char in new_package_name:
     if char in string.whitespace:
         exit("Package names can't contain whitespace characters.")
 
+# remove .git dir of the python_package_template repo
+git_dir_path = os.path.join(old_package_name, '.git')
+shutil.rmtree(git_dir_path)
+print(f"removed '{git_dir_path}'")
+
+readme_path = os.path.join(old_package_name, 'README.md')
+os.remove(readme_path)
+print(f"removed '{readme_path}'")
+
 # rename package directory
 shutil.move(old_package_name, new_package_name)
 print(f"renamed '{old_package_name}' to '{new_package_name}'")
 
-# remove .git dir of the python_package_template repo
-git_dir_path = os.path.join(new_package_name, '.git')
-shutil.rmtree(git_dir_path)
-print(f"removed '{git_dir_path}'")
-
-# update the config file
+# update the package's config file
 cfg_path = os.path.join(new_package_name, 'setup.cfg')
-# cfg_path = 'python_package_template/setup.cfg'
 with open(cfg_path, 'r') as f:
     old_cfg_contents = f.read().splitlines()
 new_cfg_contents = []
@@ -69,10 +72,6 @@ for line in old_gitignore_contents:
 with open(gitignore_path, 'w') as f:
     f.write('\n'.join(line for line in new_gitignore_contents))
 print(f"updated '{gitignore_path}'")
-
-readme_path = os.path.join(new_package_name, 'README.md')
-os.remove(readme_path)
-print(f"removed '{readme_path}'")
 
 print(f"""
 Now you'll need to:
