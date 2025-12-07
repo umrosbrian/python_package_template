@@ -4,16 +4,16 @@ import shutil
 import string
 from sitecustomize import new_prefix
 
-#ap = argparse.ArgumentParser()
-#required = ap.add_argument_group('required named arguments')
-#required.add_argument('-p', '--package_name',
-#                      required=True,
-#                      help="Name of package that is being create.  Python package names should be lowercase and need to be one word (no spaces).  Underscores won't break anything, but they aren't the standard.")
-#args = vars(ap.parse_args())
+ap = argparse.ArgumentParser()
+required = ap.add_argument_group('required named arguments')
+required.add_argument('-p', '--package_name',
+                      required=True,
+                      help="Name of package that is being create.  Python package names should be lowercase and need to be one word (no spaces).  Underscores won't break anything, but they aren't the standard.")
+args = vars(ap.parse_args())
 
 old_package_name = 'python_package_template'  # name of this repo as it currently stands
-# new_package_name = args['package_name']
-new_package_name = 'sshauth'
+new_package_name = args['package_name']
+# new_package_name = 'sshauth'
 
 def update_package_name(file_path):
     """Change all occurrences of the current package name (python_package_template) in a file to the new package
@@ -83,5 +83,5 @@ Now you'll need to:
 4. Upgrade pip with 'pip install -U pip' to ensure that you can install editable packages.
 5. Locally install the package with 'pip install -e ./{new_package_name}'.
 6. Optionally, delete this script with 'rm {new_package_name}/set_package_name.py'.
-7. Optionally, initiate a new git repo.
-8. Optionally, assign an author in '{new_package_name}/docs/conf.py'.""")
+7. Optionally, initiate a new git repo in the '{new_package_name}' directory.
+8. Optionally, assign an author in '{new_package_name}/docs/conf.py' if you plan on using sphinx.""")
