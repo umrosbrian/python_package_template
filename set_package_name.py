@@ -2,7 +2,6 @@ import argparse
 import os
 import shutil
 import string
-from sitecustomize import new_prefix
 
 ap = argparse.ArgumentParser()
 required = ap.add_argument_group('required named arguments')
