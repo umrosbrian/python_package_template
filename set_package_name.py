@@ -43,10 +43,6 @@ git_dir_path = os.path.join(old_package_name, '.git')
 shutil.rmtree(git_dir_path)
 print(f"removed '{git_dir_path}'")
 
-readme_path = os.path.join(old_package_name, 'README.md')
-os.remove(readme_path)
-print(f"removed '{readme_path}'")
-
 # rename package directory
 shutil.move(old_package_name, new_package_name)
 print(f"renamed '{old_package_name}' to '{new_package_name}'")
@@ -81,5 +77,5 @@ Now you'll need to:
 3. Add the package's code to the '{new_src_subdir_path}' directory.
 4. Upgrade pip with 'pip install -U pip' to ensure that you can install editable packages.
 5. Locally install the package with 'pip install -e ./{new_package_name}'.
-6. Optionally, delete this script with 'rm {new_package_name}/set_package_name.py'.
+6. Optionally, delete this script with 'rm {new_package_name}/set_package_name.py', also remove the README.md if needed.
 7. Optionally, initiate a new git repo in the '{new_package_name}' directory.""")
