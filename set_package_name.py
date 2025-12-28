@@ -74,8 +74,8 @@ Now you'll need to:
 
 1. Change the values of the directives in the 'metadata' section of '{cfg_path}'.
 2. Add dependency packages in the 'install_requires' directive of '{cfg_path}'.
-3. Add the package's code to the '{new_src_subdir_path}' directory.
-4. Upgrade pip with 'pip install -U pip' to ensure that you can install editable packages.
-5. Locally install the package with 'pip install -e ./{new_package_name}'.
-6. Optionally, delete this script with 'rm {new_package_name}/set_package_name.py', also remove the README.md if needed.
-7. Optionally, initiate a new git repo in the '{new_package_name}' directory.""")
+3. Optionally, delete this script with 'rm {new_package_name}/set_package_name.py', also remove the README.md if needed.
+4. Optionally, initiate a new git repo in the '{new_package_name}' directory.
+5. Add the package's code to the '{new_src_subdir_path}' directory.
+6. Upgrade pip with 'pip install -U pip' to ensure that you can install editable packages.
+7. Locally install the package with 'pip install -e ./{new_package_name}'.""")
